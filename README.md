@@ -4,3 +4,4 @@
 - [1920. Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
 - [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)
 - [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+- [N-th Tribonacci Number](https://leetcode.com/problems/n_th_tribonacci_number/)

@@ -16,3 +16,4 @@
 - [Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers)
 - [Path Sum](https://leetcode.com/problems/path-sum)
 - [Path Sum II](https://leetcode.com/problems/path-sum-ii)
+- [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle)

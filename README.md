@@ -17,4 +17,5 @@
 - [Path Sum](https://leetcode.com/problems/path-sum)
 - [Path Sum II](https://leetcode.com/problems/path-sum-ii)
 - [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle)
+- [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii)
 - [Palindrome Number](https://leetcode.com/problems/palindrome-number)

@@ -20,3 +20,4 @@
 - [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii)
 - [Palindrome Number](https://leetcode.com/problems/palindrome-number)
 - [Append K Integers With Minimal Sum](https://leetcode.com/problems/append-k-integers-with-minimal-sum)
+- [Binary Search](https://leetcode.com/problems/binary-search)

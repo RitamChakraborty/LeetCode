@@ -21,3 +21,4 @@
 - [Palindrome Number](https://leetcode.com/problems/palindrome-number)
 - [Append K Integers With Minimal Sum](https://leetcode.com/problems/append-k-integers-with-minimal-sum)
 - [Binary Search](https://leetcode.com/problems/binary-search)
+- [First Bad Version](https://leetcode.com/problems/first-bad-version)

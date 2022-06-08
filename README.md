@@ -24,3 +24,4 @@
 - [First Bad Version](https://leetcode.com/problems/first-bad-version)
 - [Triangle](https://leetcode.com/problems/triangle/)
 - [Jump Game](https://leetcode.com/problems/jump-game/)
+- [Jump Game II](https://leetcode.com/problems/jump-game-ii/)

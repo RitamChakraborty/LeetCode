@@ -28,4 +28,5 @@
 - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-character/)
 - [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)
-- [Solve Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-lis)
+- [Solve Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list)
+- [Symmetric Tree](https://leetcode.com/problems/symmetric-tree)

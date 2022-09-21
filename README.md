@@ -33,3 +33,4 @@
 - [Same Tree](https://leetcode.com/problems/same-tree/)
 - [Implement Trie Prefix Tree](https://leetcode.com/problems/implement-trie-prefix-tree/)
 - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/submissions/)
+- [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)

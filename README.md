@@ -34,3 +34,4 @@
 - [Implement Trie Prefix Tree](https://leetcode.com/problems/implement-trie-prefix-tree/)
 - [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/submissions/)
 - [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+- [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)

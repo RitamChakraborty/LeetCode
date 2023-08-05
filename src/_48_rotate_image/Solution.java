@@ -1,24 +1,23 @@
 package _48_rotate_image;
 
-class Solution {
+public class Solution {
     public void rotate(int[][] arr) {
-        int l = 0;
-        int r = arr.length - 1;
+        int n = arr.length;
 
-        while (l < r) {
-            int t = l;
-            int b = r;
-
-            for (int i = 0; i < r - l; ++i) {
-                int tl = arr[t][l + i];
-                arr[t][l + i] = arr[b - i][l];
-                arr[b - i][l] = arr[b][r - i];
-                arr[b][r - i] = arr[t + i][r];
-                arr[t + i][r] = tl;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < i; ++j) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
             }
+        }
 
-            l++;
-            r--;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0, k = n - 1; j <= k; ++j, --k) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[i][k];
+                arr[i][k] = temp;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 package _31_next_permutation;
 
+import java.util.Arrays;
+
 /**
  * First find the peak
  * that is from right to left arr[i] < arr[i + 1]

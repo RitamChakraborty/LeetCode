@@ -1,4 +1,4 @@
-package middle_of_the_linked_list;
+package _876_middle_of_the_linked_list;
 
 class ListNode {
     int val;
@@ -19,18 +19,14 @@ class ListNode {
 
 class Solution {
     public ListNode middleNode(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        ListNode n1 = head;
-        ListNode n2 = head;
-
-        while (n2 != null && n2.next != null) {
-            n1 = n1.next;
-            n2 = n2.next.next;
-        }
-
-        return n1;
+        return slow;
     }
 }

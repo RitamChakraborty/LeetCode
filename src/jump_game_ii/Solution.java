@@ -1,42 +1,23 @@
 package jump_game_ii;
 
 class Solution {
-    private int jump(int[] nums, int j, int count, int[] mem) {
-        int n = nums.length;
-
-        if (j == n - 1) {
-            return count;
-        } else if (j >= n) {
-            return Integer.MAX_VALUE;
-        }
-
-        int min = Integer.MAX_VALUE;
-
-        for (int i = nums[j]; i >= 1; --i) {
-            min = Integer.min(min, jump(nums, i + j, count + 1, mem));
-        }
-
-        mem[j] = min;
-
-        return min;
-    }
-
     public int jump(int[] nums) {
-        int n = nums.length;
-        int[] mem = new int[n];
+        int count = 0;
+        int left = 0;
+        int right = 0;
 
-        for (int i = n - 2; i >= 0; --i) {
-            int min = 9999999;
+        while (right < nums.length - 1) {
+            int max = 0;
 
-            for (int j = nums[i]; j >= 1; --j) {
-                if (i + j < n) {
-                    min = Integer.min(min, mem[i + j]);
-                }
+            for (int i = left; i <= right; ++i) {
+                max = Integer.max(max, i + nums[i]);
             }
 
-            mem[i] = min + 1;
+            left = right + 1;
+            right = max;
+            ++count;
         }
 
-        return mem[0];
+        return count;
     }
 }

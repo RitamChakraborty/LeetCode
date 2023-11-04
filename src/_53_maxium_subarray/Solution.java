@@ -18,16 +18,11 @@ public class Solution {
     }
 
     public int maxSubArray(int[] arr) {
-        int maxSoFar = arr[0];
         int max = arr[0];
+        int maxSoFar = arr[0];
 
         for (int i = 1; i < arr.length; ++i) {
-            if (arr[i] + maxSoFar < arr[i]) {
-                maxSoFar = arr[i];
-            } else {
-                maxSoFar += arr[i];
-            }
-
+            maxSoFar = Integer.max(maxSoFar + arr[i], arr[i]);
             max = Integer.max(max, maxSoFar);
         }
 

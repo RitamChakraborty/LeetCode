@@ -3,7 +3,10 @@ package _88_merge_sorted_array;
 import java.util.Arrays;
 
 public class Solution {
-    public void mergeBruteForce(int[] nums1, int m, int[] nums2, int n) {
+    /**
+     * Brute Force
+     */
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
         int[] nums3 = new int[m + n];
         int i = 0;
         int j = 0;
@@ -30,6 +33,9 @@ public class Solution {
         }
     }
 
+    /**
+     * Optimized 1
+     */
     public void mergeSolution1(int[] nums1, int m, int[] nums2, int n) {
         int i = nums1.length - 1;
         int j = 0;
@@ -55,7 +61,10 @@ public class Solution {
         }
     }
 
-    public void mergeSolution2(int[] nums1, int m, int[] nums2, int n) {
+    /**
+     * Optimized 2
+     */
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
         int len = m + n;
 
         while (len > 1) {
@@ -78,5 +87,22 @@ public class Solution {
         }
 
         System.arraycopy(nums2, 0, nums1, m, n);
+    }
+
+    /**
+     * Best
+     */
+    public void merge3(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
     }
 }

@@ -1,5 +1,10 @@
 # [LeetCode](https://leetcode.com)
 
+| Question                                                                                                                                       | Solution                                                                          |
+|------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/)                                                               | [Solution](./src/_2_add_two_numbers/Solution.java)                                |
+| [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) | [Solution](./src/_3_longest_substring_without_repeating_characters/Solution.java) |
+
 - [Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array/)
 - [1920. Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
 - [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)

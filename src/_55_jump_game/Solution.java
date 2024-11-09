@@ -1,4 +1,4 @@
-package _56_jump_game;
+package _55_jump_game;
 
 class Solution {
     public boolean canJump(int[] nums) {

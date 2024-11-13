@@ -1,4 +1,4 @@
-package concatenation_of_array;
+package _1929_concatenation_of_array;
 
 class Solution {
     public int[] getConcatenation(int[] nums) {

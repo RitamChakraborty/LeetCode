@@ -3,7 +3,7 @@ package _144_binary_tree_preorder_traversal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TreeNode {
+class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;

@@ -1,4 +1,4 @@
-package append_k_integers_with_minimal_sum;
+package _2195_append_k_integers_with_minimal_sum;
 
 import java.util.HashSet;
 

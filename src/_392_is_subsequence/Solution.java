@@ -1,4 +1,4 @@
-package is_subsequence;
+package _392_is_subsequence;
 
 class Solution {
     public boolean isSubsequence(String s, String t) {

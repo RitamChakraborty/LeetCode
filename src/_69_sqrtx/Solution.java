@@ -1,4 +1,4 @@
-package sqrtx;
+package _69_sqrtx;
 
 class Solution {
     public int mySqrt(int x) {

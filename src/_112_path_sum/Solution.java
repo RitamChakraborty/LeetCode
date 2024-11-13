@@ -1,4 +1,4 @@
-package path_sum;
+package _112_path_sum;
 
 class TreeNode {
     int val;

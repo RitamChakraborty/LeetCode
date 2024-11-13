@@ -1,4 +1,4 @@
-package fibonacci_number;
+package _509_fibonacci_number;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package n_th_tribonacci_number;
+package _1137_n_th_tribonacci_number;
 
 class Solution {
     public static void main(String[] args) {

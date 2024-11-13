@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
-    public int majorityElementBruteForce(int[] arr) {
+    /**
+     * Bruce Force
+     */
+    public int majorityElement1(int[] arr) {
         int n = arr.length;
         int majority = n / 2;
 
@@ -21,7 +24,10 @@ class Solution {
         return -1;
     }
 
-    public int majorityElementOptimal1(int[] arr) {
+    /**
+     * Time Optimized
+     */
+    public int majorityElement2(int[] arr) {
         int n = arr.length;
         int majority = n / 2;
         Map<Integer, Integer> map = new HashMap<>();
@@ -39,7 +45,10 @@ class Solution {
         return -1;
     }
 
-    public int majorityElement(int[] arr) {
+    /**
+     * Time and Space Optimized
+     */
+    public int majorityElement3(int[] arr) {
         int n = arr.length;
         int majorityElement = arr[0];
         int count = 1;

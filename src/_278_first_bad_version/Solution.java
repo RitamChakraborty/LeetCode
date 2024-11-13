@@ -1,4 +1,4 @@
-package first_bad_version;
+package _278_first_bad_version;
 
 class VersionControl {
     int badVersion;

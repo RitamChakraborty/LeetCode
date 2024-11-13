@@ -1,4 +1,4 @@
-package binary_search;
+package _704_binary_search;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package get_maximum_in_generated_array;
+package _1646_get_maximum_in_generated_array;
 
 class Solution {
     public static void main(String[] args) {

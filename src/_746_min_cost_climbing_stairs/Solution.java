@@ -1,4 +1,4 @@
-package min_cost_climbing_stairs;
+package _746_min_cost_climbing_stairs;
 
 import java.util.Arrays;
 

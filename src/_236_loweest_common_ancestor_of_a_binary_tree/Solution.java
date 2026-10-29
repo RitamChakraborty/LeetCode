@@ -1,14 +1,16 @@
 package _236_loweest_common_ancestor_of_a_binary_tree;
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+    }
+}
+
 class Solution {
     /**
      * If you find the root is matching with either p or q just return the node. Don't care about it's being null,

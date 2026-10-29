@@ -29,7 +29,6 @@ class Solution {
         int max = Integer.max(pVal, qVal);
         if (val >= min && val <= max) return root;
         if (val < min) return lowestCommonAncestor(root.right, p, q);
-        if (val > max) return lowestCommonAncestor(root.left, p, q);
-        return null;
+        return lowestCommonAncestor(root.left, p, q);
     }
 }

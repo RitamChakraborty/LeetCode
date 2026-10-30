@@ -1,5 +1,7 @@
 package _70_climbing_stairs;
 
+import java.util.Arrays;
+
 public class Solution {
     public int climbStairs(int n) {
         int a = 0;
@@ -25,5 +27,33 @@ public class Solution {
         }
 
         return secondLast;
+    }
+
+    public int climbStairsBruteForce(int n) {
+       if (n < 0) return 0;
+       if (n == 0) return 1;
+       return climbStairsBruteForce(n - 1) + climbStairsBruteForce(n - 2);
+    }
+
+    private int climbStairs2(int n, int[] dp) {
+        if (n < 0) return 0;
+        if (n == 0) return 1;
+        if (dp[n] != -1) return dp[n];
+        int count = climbStairs2(n - 1, dp) + climbStairs2(n - 2, dp);
+        dp[n] = count;
+        return count;
+    }
+
+    /**
+     * *1D DP*
+     * There are two ways to reach top, one step or two steps
+     * Memorize every step after stepping on it so that value can be used later
+     * @param n
+     * @return
+     */
+    public int climbStairs2(int n) {
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, -1);
+        return climbStairs2(n, dp);
     }
 }

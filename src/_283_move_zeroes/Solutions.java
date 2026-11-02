@@ -43,7 +43,5 @@ class SolutionBest {
 
             fastPointer++;
         }
-
-
     }
 }

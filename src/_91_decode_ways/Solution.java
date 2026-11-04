@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class Solution {
+class SolutionBruteForce {
     private int solve(String s, int index, int[] mem) {
         if (index == s.length()) return 1;
         char ch1 = s.charAt(index);
@@ -27,5 +27,45 @@ class Solution {
         int[] mem = new int[s.length()];
         Arrays.fill(mem, -1);
         return solve(s, 0, mem);
+    }
+}
+
+/**
+ * Decision tree optimization
+ * Set the values for the next and next to next. Initially next to next value should be a valid
+ * Based on the current value update the next1 and next2 values
+ * Time: O(N)
+ * Space: O(1)
+ */
+class SolutionOptmized {
+    public int numDecodings(String s) {
+        int n = s.length();
+        if (n == 0 || s.charAt(0) == '0') return 0;
+
+        int next1 = 0;
+        int next2 = 1;
+
+        if (s.charAt(n - 1) != '0') {
+            next1 = 1;
+        }
+
+        for (int i = n - 2; i >= 0; i--) {
+            int current = s.charAt(i) - 48;
+            int next = s.charAt(i + 1) - 48;
+            int curr = 0;
+
+            if (current != 0) {
+                curr = next1;
+            }
+
+            if (current == 1 || (current == 2 && next < 7)) {
+                curr += next2;
+            }
+
+            next2 = next1;
+            next1 = curr;
+        }
+
+        return next1;
     }
 }

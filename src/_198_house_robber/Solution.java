@@ -69,10 +69,8 @@ class Solution {
 
 /**
  * Greedy
- *
  * Take the max of the first two, kept as previous 1 and previous 2
  * Take the current + previous 1 or take previous 2
- *
  * Time: O(N)
  * Space: O(1)
  */

@@ -66,3 +66,30 @@ class Solution {
         return prev;
     }
 }
+
+/**
+ * Greedy
+ *
+ * Take the max of the first two, kept as previous 1 and previous 2
+ * Take the current + previous 1 or take previous 2
+ *
+ * Time: O(N)
+ * Space: O(1)
+ */
+class SolutionIterative {
+    public int rob(int[] nums) {
+        int n = nums.length;
+        if (n == 1) return nums[0];
+
+        int prev1 = Integer.max(nums[0], nums[1]);
+        int prev2 = nums[0];
+
+        for (int i = 2; i < n; i++) {
+            int current = Integer.max(nums[i] + prev2, prev1);
+            prev2 = prev1;
+            prev1 = current;
+        }
+
+        return prev1;
+    }
+}

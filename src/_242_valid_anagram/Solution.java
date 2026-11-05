@@ -1,20 +1,22 @@
 package _242_valid_anagram;
 
+/**
+ * Hashing: As you iterate over make sure the character count cancels each other out.
+ * Time: O(N)
+ * Space: O(1)
+ */
 class Solution {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return false;
-        int[] mem = new int[26];
+        int[] count = new int[26];
 
-        for (char ch : s.toCharArray()) {
-            mem[ch - 'a']++;
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 97]++;
+            count[t.charAt(i) - 97]--;
         }
 
-        for (char ch: t.toCharArray()) {
-            mem[ch - 'a']--;
-        }
-
-        for (int i : mem) {
-            if (i != 0) return false;
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] != 0) return false;
         }
 
         return true;

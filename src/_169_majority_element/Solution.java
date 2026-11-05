@@ -67,3 +67,22 @@ class Solution {
         return majorityElement;
     }
 }
+
+/**
+ * If majority element is found, count should increase otherwise, it'll decrease
+ * Time: O(n)
+ * Space: O(1)
+ */
+class SolutionOptimized {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int result = nums[0];
+
+        for (int num : nums) {
+            if (count == 0) result = num;
+            count = num == result ? count + 1 : count - 1;
+        }
+
+        return result;
+    }
+}

@@ -17,6 +17,13 @@ class ListNode {
     }
 }
 
+/**
+ * Two pointers:
+ * Let the fast pointer goes till n. After that move the slow and fast pointer together till fast reaches the end.
+ * That'll also be the point where you have to remove the element from slow. Use fake head.
+ * Time: O(N)
+ * Space: O(1)
+ */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode fakeHead = new ListNode();

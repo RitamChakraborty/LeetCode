@@ -55,3 +55,41 @@ class Solution {
         return true;
     }
 }
+
+/**
+ * Two Pointers: Find the middle, reverse the linked list starting from middle, then compare left & right halves
+ * Time: O(N)
+ * Space: O(1)
+ */
+class SolutionBest {
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        ListNode prev = null;
+        ListNode curr = slow;
+
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        ListNode left = head;
+        ListNode right = prev;
+
+        while (right != null) {
+            if (left.val != right.val) return false;
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
+}

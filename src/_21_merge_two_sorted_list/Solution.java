@@ -19,32 +19,61 @@ class ListNode {
 
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if (list1 == null) return list2;
-        if (list2 == null) return list1;
+        ListNode fakeHead = new ListNode();
+        ListNode temp = fakeHead;
 
-        if (list1.val > list2.val) {
-            ListNode temp = list1;
-            list1 = list2;
-            list2 = temp;
-        }
-
-        ListNode result = list1;
-
-        while (list2 != null) {
-            ListNode tmp = null;
-
-            while (list1 != null && list1.val <= list2.val) {
-                tmp = list1;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                temp.next = new ListNode(list1.val);
                 list1 = list1.next;
+            } else {
+                temp.next = new ListNode(list2.val);
+                list2 = list2.next;
             }
 
-            tmp.next = list2;
-
-            ListNode temp = list1;
-            list1 = list2;
-            list2 = temp;
+            temp = temp.next;
         }
 
-        return result;
+        if (list1 != null) {
+            temp.next = list1;
+        }
+
+        if (list2 != null) {
+            temp.next = list2;
+        }
+
+        return fakeHead.next;
+    }
+}
+
+/**
+ *
+ */
+class SolutionOptimized {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode fakeHead = new ListNode();
+        ListNode temp = fakeHead;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                temp.next = list1;
+                list1 = list1.next;
+            } else {
+                temp.next = list2;
+                list2 = list2.next;
+            }
+
+            temp = temp.next;
+        }
+
+        if (list1 != null) {
+            temp.next = list1;
+        }
+
+        if (list2 != null) {
+            temp.next = list2;
+        }
+
+        return fakeHead.next;
     }
 }

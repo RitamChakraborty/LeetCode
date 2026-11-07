@@ -1,30 +1,25 @@
 package _704_binary_search;
 
-public class Solution {
+/**
+ * Reset start and end based on the equality of the mid
+ * Time: O(logN)
+ * Space: O(1)
+ */
+class Solution {
+    public int search(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
 
-    private int binarySearch(int[] arr, int start, int end, int n) {
-        if (start < end) {
-            if (arr[start] == n) {
-                return start;
-            } else if (arr[end] == n) {
-                return end;
-            }
-
+        while (start <= end) {
             int mid = (start + end) / 2;
-
-            if (arr[mid] == n) {
-                return mid;
-            } else if (arr[mid] < n) {
-                return binarySearch(arr, mid + 1, end, n);
-            } else if (arr[mid] > n) {
-                return binarySearch(arr, start, mid - 1, n);
+            if (nums[mid] == target) return mid;
+            if (target < nums[mid]) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
             }
         }
 
         return -1;
-    }
-
-    public int binarySearch(int[] arr, int n) {
-        return binarySearch(arr, 0, arr.length - 1, n);
     }
 }

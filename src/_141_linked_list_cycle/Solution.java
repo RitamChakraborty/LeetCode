@@ -10,9 +10,13 @@ class ListNode {
     }
 }
 
+/**
+ * Two Pointers: Fast runs twice as fast as slow
+ * Time: O(N)
+ * Space: O(1)
+ */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if (head == null || head.next == null) return false;
         ListNode slow = head;
         ListNode fast = head;
 

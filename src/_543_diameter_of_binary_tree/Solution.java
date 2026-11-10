@@ -34,3 +34,47 @@ class Solution {
         return d[0];
     }
 }
+
+class SolutionRecursiveBruteForce {
+    public int maxHeight(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Integer.max(maxHeight(root.left), maxHeight(root.right));
+    }
+    public int diameterOfBinaryTree(TreeNode root) {
+        if (root == null) return 0;
+        int leftHeight = maxHeight(root.left);
+        int rightHeight = maxHeight(root.right);
+        return Integer.max(
+                leftHeight + rightHeight,
+                Integer.max(
+                        diameterOfBinaryTree(root.left),
+                        diameterOfBinaryTree(root.right)
+                )
+        );
+    }
+}
+
+/**
+ * Recursion: While calculating the height update the max diameter global variable
+ * Time: O(N)
+ * Space: O(1)
+ */
+class SolutionOptimized {
+    int max = 0;
+
+    private int getHeight(TreeNode root) {
+        if (root == null) return 0;
+
+        int left = getHeight(root.left);
+        int right = getHeight(root.right);
+
+        max = Integer.max(max, left + right);
+
+        return 1 + Integer.max(left, right);
+    }
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        getHeight(root);
+        return max;
+    }
+}

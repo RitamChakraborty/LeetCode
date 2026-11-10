@@ -84,8 +84,8 @@ class SolutionTopDown {
 }
 
 /**
- * To down recursive DFS
- * Return -1 if the condition isn't valid
+ *
+ * Recursive DFS: Return -1 if the condition isn't valid
  * Time: O(N)
  * Space: O(H)
  */

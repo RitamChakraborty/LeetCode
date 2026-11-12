@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * Min Heap: If the size of the heap is greater than k, remove the highest
+ * Max Heap: If the size of the heap is greater than k, remove the highest
  * Time: O(N * logN)
  * Space: O(K)
  */

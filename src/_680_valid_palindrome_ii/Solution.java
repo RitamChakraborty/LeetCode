@@ -1,4 +1,4 @@
-package _680_valid_palindrome;
+package _680_valid_palindrome_ii;
 
 class SolutionRecursive {
     boolean validPalindrome(String s, int left, int right, boolean flag) {

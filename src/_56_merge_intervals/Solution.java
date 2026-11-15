@@ -2,30 +2,59 @@ package _56_merge_intervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Two Pointers: Sort the intervals with the first index. Keep a track of the previous end and compare it with
+ * the current start
+ * Time: O(N * LogN)
+ * Space: O(N)
+ */
 class Solution {
-    public int[][] merge(int[][] arr) {
-        int n = arr.length;
-        Arrays.sort(arr, Comparator.comparingInt(a -> a[0]));
-        int low = arr[0][0];
-        int high = arr[0][1];
-        List<int[]> list = new ArrayList<>();
+    static class Interval {
+        int start, end;
 
-        for (int i = 1; i < arr.length; ++i) {
-            int[] a = arr[i];
-            if (a[0] < high) {
-                high = Integer.max(high, a[1]);
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        List<Interval> list = new ArrayList<>();
+        List<Interval> result = new ArrayList<>();
+
+        for (int[] i : intervals) {
+            list.add(new Interval(i[0], i[1]));
+        }
+
+        Interval previousInterval = list.getFirst();
+        int previousEnd = previousInterval.end;
+
+        for (int i = 1; i < intervals.length; i++) {
+            Interval currentInterval = list.get(i);
+
+            if (currentInterval.start <= previousEnd) {
+                previousEnd = Integer.max(previousEnd, currentInterval.end);
+                previousInterval.end = previousEnd;
             } else {
-                list.add(new int[]{low, high});
+                result.add(previousInterval);
+                previousInterval = currentInterval;
+                previousEnd = previousInterval.end;
             }
         }
 
-        list.add(new int[]{low, high});
-        int[][] result = new int[list.size()][2];
-        for (int i = 0; i < list.size(); ++i) result[i] = list.get(i);
+        result.add(previousInterval);
 
-        return result;
+        int[][] resultArr = new int[result.size()][2];
+
+        for (int i = 0; i < result.size(); i++) {
+            resultArr[i][0] = result.get(i).start;
+            resultArr[i][1] = result.get(i).end;
+        }
+
+        return resultArr;
     }
 }
